@@ -11,7 +11,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter Beamer Deep Linking',
-      routeInformationParser: BeamerParser(),
+      routeInformationParser: BeamerParser(
+        onParse: (state) {
+          print("BeamerParser.onParse(${state.uri})");
+          return state;
+        },
+      ),
       routerDelegate: BeamerDelegate(
         locationBuilder: SimpleLocationBuilder(
           routes: {
