@@ -27,7 +27,7 @@
 			<string>flutter_beamer_deep_linking.web.app</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>flutter_beamer_deep_linking</string>
+				<string>flutterbeamerdeeplinking</string>
 			</array>
 		</dict>
 	</array>
