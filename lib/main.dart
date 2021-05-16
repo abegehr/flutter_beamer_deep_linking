@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter Beamer Deep Linking',
-      routeInformationParser: BeamerRouteInformationParser(),
-      routerDelegate: BeamerRouterDelegate(
+      routeInformationParser: BeamerParser(),
+      routerDelegate: BeamerDelegate(
         locationBuilder: SimpleLocationBuilder(
           routes: {
             '/': (context) => HomeScreen(),
@@ -67,7 +67,8 @@ class BooksScreen extends StatelessWidget {
 class BookDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final id = Beamer.of(context).currentLocation.state.pathParameters['id'];
+    final id =
+        Beamer.of(context).currentBeamLocation.state.pathParameters['id'];
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter Beamer Deep Linking – Book $id"),
