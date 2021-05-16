@@ -24,7 +24,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>flutter_beamer_deep_linking.web.app</string>
+			<string>flutterbeamerdeeplinking.web.app</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>flutterbeamerdeeplinking</string>
