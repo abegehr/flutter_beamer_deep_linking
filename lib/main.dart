@@ -9,7 +9,7 @@ class BookRouteInformationParser extends RouteInformationParser<BookRoutePath> {
   @override
   Future<BookRoutePath> parseRouteInformation(
       RouteInformation routeInformation) async {
-    print("BookRouteInformationParser – routeInformation: $routeInformation");
+    print("routeInformation.location: ${routeInformation.location}");
 
     final uri = Uri.parse(routeInformation.location!);
     // Handle '/'
@@ -19,7 +19,7 @@ class BookRouteInformationParser extends RouteInformationParser<BookRoutePath> {
 
     // Handle '/book/:id'
     if (uri.pathSegments.length == 2) {
-      if (uri.pathSegments[0] != 'book') return BookRoutePath.home();
+      if (uri.pathSegments[0] != 'books') return BookRoutePath.home();
       var remaining = uri.pathSegments[1];
       var id = int.tryParse(remaining);
       if (id == null) return BookRoutePath.home();
@@ -62,7 +62,7 @@ class BookRouterDelegate extends RouterDelegate<BookRoutePath>
         ),
         if (_id != null)
           MaterialPage(
-            key: ValueKey('BooksPage'),
+            key: ValueKey('BookDetailsPage-$_id'),
             child: BookDetailsScreen(_id!),
           ),
       ],
