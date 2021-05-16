@@ -1,11 +1,14 @@
 {
-    "applinks": {
-        "apps": [],
-        "details": [
-            {
-                "appID": "EW3E677XMJ.com.example.flutterBeamerDeepLinking",
-                "paths": [ "*" ]
-            }
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "EW3E677XMJ.com.example.flutterBeamerDeepLinking",
+        "paths": [
+          "NOT /_/*",
+          "/*"
         ]
-    }
+      }
+    ]
+  }
 }
